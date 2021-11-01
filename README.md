@@ -93,7 +93,7 @@ allprojects {
 ```
 + 2、在应用级别的**build.gradle**添加
 ```
-api 'com.github.yinhaide:Vigatom:v0.0.1'
+api 'com.github.yinhaide:Vigatom:v0.0.2'
 ```
 
 ### 工程配置
