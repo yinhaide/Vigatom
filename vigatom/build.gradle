@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.yinhaide'
+
+android {
+    compileSdkVersion androidCompileSdk()
+
+    defaultConfig {
+        minSdkVersion androidMinSdk()
+        targetSdkVersion androidTargetSdk()
+        versionCode 1
+        versionName "0.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //打包改名
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            //名称_版本号_日期.apk
+            outputFileName = "vatiom_v${defaultConfig.versionName}_${releaseTime()}.aar"
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    // 统一基础包
+    api "com.android.support:support-v4:$supportLibraryVersion"
+    api "com.android.support:appcompat-v7:$supportLibraryVersion"
+    api "com.android.support:multidex:1.0.3"
+}

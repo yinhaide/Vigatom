@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Vigatiom UI 框架根容器-->
+    <com.tencent.vigatom.ue.layout.PercentFrameLayout
+        android:id="@+id/viView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/vigatom_cl_white"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:layout_marginTop="0dp"
+        android:id="@+id/iv_vigatom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/statusbar" />
+
+    <com.tencent.vigatom.ue.layout.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A5000000"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/style_tv"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vigatom_cl_white"
+            android:text="状态栏风格选择" />
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:id="@+id/custom_style"
+            android:layout_below="@+id/style_tv"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_marginStart="10dp"
+                android:id="@+id/bt_immersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="使用自定义状态栏" />
+
+            <Button
+                android:layout_marginStart="10dp"
+                android:id="@+id/bt_white_vigatom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="白色图标" />
+
+            <Button
+                android:layout_marginStart="10dp"
+                android:id="@+id/bt_black_vigatom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="黑色图标" />
+
+            <Button
+                android:layout_marginStart="10dp"
+                android:id="@+id/bt_black_keyboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="单个图标控制" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <TextView
+            android:id="@+id/system_style_tv"
+            android:layout_below="@+id/custom_style"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vigatom_cl_white"
+            android:text="状态栏风格选择" />
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/systerm_style"
+            android:layout_below="@+id/system_style_tv"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_not_immersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="使用系统状态栏" />
+
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/systerm_style"
+            android:id="@+id/color_ll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="状态栏背景色设置" />
+
+            <com.tencent.vigatom.ue.layout.PercentLinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/bt_color_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/vigatom_round_pd10"
+                    android:textColor="@color/vigatom_cl_white"
+                    android:text="黑色背景" />
+
+                <Button
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/bt_color_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/vigatom_round_pd10"
+                    android:textColor="@color/vigatom_cl_white"
+                    android:text="白色背景" />
+
+                <Button
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/bt_color_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/vigatom_round_pd10"
+                    android:textColor="@color/vigatom_cl_white"
+                    android:text="红色背景" />
+
+            </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:id="@+id/seek_ll"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/color_ll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="状态栏透明度设置" />
+
+            <SeekBar
+                android:id="@+id/sb_color"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_below="@+id/seek_ll"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vigatom_cl_red"
+            android:text="按键内容" />
+
+    </com.tencent.vigatom.ue.layout.PercentRelativeLayout>
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

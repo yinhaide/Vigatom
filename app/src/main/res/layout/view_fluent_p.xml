@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white"
+    tools:context="com.tencent.wx.app.activity.MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/title_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="100%sw"
+        app:layout_heightPercent="55.5%sw"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fluent" />
+
+    <TextView
+        android:layout_below="@+id/title_iv"
+        android:id="@+id/content_tv"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/vigatom_cl_black"
+        app:layout_paddingStartPercent="2%sw"
+        app:layout_paddingEndPercent="2%sw"
+        app:layout_textSizePercent="3.5%sw"
+        android:text="卡顿内容显示" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

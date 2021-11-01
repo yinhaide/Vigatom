@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="vigatom_cl_primary">#008577</color>
+    <color name="vigatom_cl_white">#FFFFFF</color>
+    <color name="vigatom_cl_red">#ff0000</color>
+    <color name="vigatom_cl_black">#000000</color>
+    <color name="vigatom_cl_vigatom">#398EFF</color>
+    <color name="vigatom_cl_dialog_bg">#8D000000</color>
+    <color name="vigatom_cl_grey">#8A000000</color>
+    <color name="vigatom_cl_trans">#00000000</color>
+    <color name="vigatom_line_dd">#dddddd</color>
+    <color name="vigatom_viblack">#515151</color>
+</resources>

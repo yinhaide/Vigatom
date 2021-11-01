@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:background="@color/vigatom_cl_vigatom"
+        android:textColor="@color/vigatom_cl_white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/vigatom_crash_title"
+        app:layout_textSizePercent="5%sh"
+        android:layout_width="match_parent"
+        app:layout_heightPercent="16%sh"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@+id/tv_title"
+        android:id="@+id/tv_content"
+        android:textColor="@color/vigatom_cl_red"
+        app:layout_marginStartPercent="2%sh"
+        app:layout_marginEndPercent="2%sh"
+        app:layout_textSizePercent="5%sh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white">
+
+    <ImageView
+        android:id="@+id/title_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dialog" />
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:id="@+id/top_ll"
+        android:background="#A5000000"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/bt_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="标准显示" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:id="@+id/bt_dialog_no_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="隐藏标题" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:id="@+id/bt_dialog_no_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="隐藏取消" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:id="@+id/bt_dialog_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="填充内容" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/bt_dialog_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="带编辑框" />
+
+            <Button
+                android:id="@+id/bt_dialog_picture"
+                app:layout_marginTopPercent="5%h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="自定义" />
+
+            <Button
+                android:id="@+id/bt_dialog_picture_over"
+                app:layout_marginTopPercent="5%h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="大图缩放" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

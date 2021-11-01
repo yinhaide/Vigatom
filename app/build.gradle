@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion androidCompileSdk()
+
+    defaultConfig {
+        applicationId "com.tencent.wx.app"
+        minSdkVersion androidMinSdk()
+        targetSdkVersion androidTargetSdk()
+        versionCode 1
+        versionName "0.0.1"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    //api fileTree(dir: "libs", include: ["*.aar"])
+    api project(":vigatom")
+    api 'com.github.yinhaide:Vigatom-master:0.0.1'
+}

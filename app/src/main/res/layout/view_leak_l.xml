@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white"
+    tools:context="com.tencent.wx.app.activity.MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/title_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/leak" />
+
+    <TextView
+        android:background="#A5000000"
+        android:id="@+id/content_tv"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/vigatom_cl_white"
+        app:layout_paddingTopPercent="5%sh"
+        app:layout_paddingStartPercent="2%sh"
+        app:layout_paddingEndPercent="2%sh"
+        app:layout_textSizePercent="5%sh"
+        android:text="退出本页面等待5秒检测内存泄漏" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="vigatom_name">Vigatom</string>
+    <string name="vigatom_need_layout">我还需要一个容器才能显示</string>
+    <string name="vigatom_crash_title">崩溃了</string>
+    <string name="vigatom_router_activity">视图栈(Activity)</string>
+    <string name="vigatom_router_vigatom">视图栈(vigatom)</string>
+    <string name="vigatom_confirm">确认</string>
+    <string name="vigatom_cancel">取消</string>
+    <string name="vigatom_title">标题</string>
+    <string name="vigatom_tips">提示</string>
+</resources>

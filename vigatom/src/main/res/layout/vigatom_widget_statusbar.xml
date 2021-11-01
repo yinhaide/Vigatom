@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="32dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout_marginStartPercent="15%h"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/keyboard_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+        <ImageView
+            android:id="@+id/start1_iv"
+            android:visibility="gone"
+            app:layout_marginStartPercent="15%h"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+        <ImageView
+            android:id="@+id/start2_iv"
+            android:visibility="gone"
+            app:layout_marginStartPercent="15%h"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/middle1_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_marginStartPercent="15%h"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/middle2_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_marginStartPercent="15%h"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/middle3_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_keyboard_b" />
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        app:layout_marginEndPercent="15%h"
+        android:layout_gravity="end"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ethernet_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_ethernet_b_selector"
+            app:layout_marginEndPercent="15%h" />
+
+        <ImageView
+            android:id="@+id/wifi_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_wifi_b_selector"
+            app:layout_marginEndPercent="15%h" />
+
+        <ImageView
+            android:id="@+id/mobile_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="80%h"
+            app:layout_heightPercent="80%h"
+            android:src="@drawable/vigatom_mobile_b_selector"
+            app:layout_marginEndPercent="15%h" />
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_textSizePercent="60%h"
+            android:textColor="@color/vigatom_viblack"
+            android:text="@string/vigatom_name" />
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+</com.tencent.vigatom.ue.layout.PercentFrameLayout>

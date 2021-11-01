@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:id="@+id/content_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        app:layout_marginPercent="5%sh"
+        android:gravity="center"
+        android:background="@drawable/vigatom_toast_corner">
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="6%sh"
+            app:layout_widthPercent="6%sh"
+            android:src="@mipmap/ic_launcher"
+            app:layout_marginEndPercent="4%sh"
+            android:id="@+id/iv" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:text="@string/vigatom_name"
+            app:layout_textSizePercent="5%sh"
+            android:textColor="#FFF" />
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

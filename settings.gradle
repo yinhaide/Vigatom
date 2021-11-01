@@ -1,0 +1,2 @@
+include ':app'//测试组件
+include ':vigatom'//library

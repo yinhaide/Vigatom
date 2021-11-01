@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white"
+    android:orientation="vertical">
+
+    <!--下面演示有导航栏又可以滚动的页面布局，其中导航栏一直在底端-->
+    <!--如果没有底部导航栏，可以直接以ScrollView作为父布局，实现内容超过屏幕滚动显示-->
+    <ScrollView
+        android:layout_above="@+id/v_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/title_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_heightPercent="55.5%w"
+                android:scaleType="centerCrop"
+                android:src="@drawable/percent" />
+
+            <com.tencent.vigatom.ue.layout.PercentFrameLayout
+                app:layout_marginPercent="5%h"
+                app:layout_paddingPercent="5%h"
+                app:layout_heightPercent="40%sh"
+                android:background="@color/vigatom_cl_vigatom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/vigatom_cl_grey"
+                    android:gravity="center"
+                    android:textColor="@color/vigatom_cl_white"
+                    android:text="50-80%w"
+                    app:layout_minWidthPercent="50%w"
+                    app:layout_maxWidthPercent="80%w"
+                    app:layout_textSizePercent="20%h" />
+
+            </com.tencent.vigatom.ue.layout.PercentFrameLayout>
+
+            <com.tencent.vigatom.ue.layout.PercentAbsoluteLayout
+                app:layout_heightPercent="40%sh"
+                android:background="@color/vigatom_cl_vigatom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/vigatom_cl_grey"
+                    android:gravity="center"
+                    android:textColor="@color/vigatom_cl_white"
+                    android:text="坐标：(50%w,50%h)"
+                    app:layout_xPercent="50%w"
+                    app:layout_yPercent="50%h" />
+
+            </com.tencent.vigatom.ue.layout.PercentAbsoluteLayout>
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/v_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="固定底部10%sh"
+        android:background="@color/vigatom_cl_primary"
+        android:textColor="@color/vigatom_cl_white"
+        app:layout_textSizePercent="5%sh"
+        app:layout_heightPercent="10%sh" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

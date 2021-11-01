@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:gravity="center"
+        android:background="@drawable/vigatom_loading_corner">
+
+        <ProgressBar
+            android:id="@+id/loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="12%sh"
+            app:layout_heightPercent="12%sh"
+            app:layout_marginPercent="4%sh"
+            android:indeterminate="true"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/vigaton_loading_rotate"
+            android:indeterminateDuration="1000"
+            android:indeterminateOnly="true" />
+
+        <com.tencent.vigatom.ue.view.ViCirclePercentView
+            android:id="@+id/circle_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="12%sh"
+            app:layout_heightPercent="12%sh"
+            app:layout_marginPercent="4%sh"
+            app:circle_color="#ffffff"
+            app:circle_percent="70" />
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_maxWidthPercent="80%sw"
+            app:layout_paddingStartPercent="4%sh"
+            app:layout_paddingEndPercent="4%sh"
+            app:layout_paddingBottomPercent="4%sh"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            android:text="@string/vigatom_tips"
+            app:layout_textSizePercent="5%sh"
+            android:textColor="@color/vigatom_cl_white" />
+
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>

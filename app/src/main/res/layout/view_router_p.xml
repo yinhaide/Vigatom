@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vigatom_cl_white">
+
+    <ImageView
+        android:id="@+id/title_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="100%sw"
+        app:layout_heightPercent="55.5%sw"
+        android:scaleType="centerCrop"
+        android:src="@drawable/router" />
+
+    <com.tencent.vigatom.ue.layout.PercentLinearLayout
+        android:id="@+id/top_ll"
+        android:layout_centerHorizontal="true"
+        app:layout_marginTopPercent="5%h"
+        android:layout_below="@+id/title_iv"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_kill_self"
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="销毁跳到Router2" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:textAllCaps="false"
+                android:id="@+id/bt_save_self"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="保留跳到Router" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:textAllCaps="false"
+                android:id="@+id/bt_refresh_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="返回重建Router1" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+        <com.tencent.vigatom.ue.layout.PercentLinearLayout
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_with_data"
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="带数据跳到Router2" />
+
+            <Button
+                app:layout_marginTopPercent="5%h"
+                android:textAllCaps="false"
+                android:id="@+id/bt_clear_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vigatom_round_pd10"
+                android:textColor="@color/vigatom_cl_white"
+                android:text="跳到Router1清栈顶" />
+
+        </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+    </com.tencent.vigatom.ue.layout.PercentLinearLayout>
+
+    <TextView
+        android:id="@+id/tv_router"
+        app:layout_marginPercent="5%h"
+        android:layout_below="@+id/top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/vigatom_cl_black"
+        android:gravity="center"
+        app:layout_textSizePercent="5%sw"
+        android:text="路由轨迹" />
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>
