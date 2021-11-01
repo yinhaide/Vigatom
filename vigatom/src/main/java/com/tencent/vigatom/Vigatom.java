@@ -116,12 +116,12 @@ public class Vigatom {
     }
 
     /**
-     * 百分比的布局方向
+     * 设置预览尺寸，默认是1080*1920，一般不用改
      *
-     * @param isHorizontal 预览方向是否是横向的，否则是竖向
+     * @param width 宽度
+     * @param height 高度
      */
-    public Vigatom setPreviewDirection(boolean isHorizontal) {
-        PercentLayoutHelper.isHorizontal = isHorizontal;
-        return instance;
+    public void setPreviewSize(int width, int height) {
+        PercentLayoutHelper.setPreviewSize(width, height);
     }
 }

@@ -34,15 +34,12 @@ public class PercentLayoutHelper {
     private static int SCREEN_LONG = 1920;
     //默认的屏幕短度(不给默认值的话用sh或者sw无法预览出来)
     private static int SCREEN_SHOT = 1080;
-    //横屏预览还是竖屏预览(默认横屏，否则竖屏)
-    // TODO: 2021/9/9 修改预览窗口横向竖向请修改这个变量，外部可以自行修改，为了保证预览的准确定
-    public static boolean isHorizontal = false;
     //屏幕宽度(不给默认值的话用sh或者sw无法预览出来)
-    private static int mWidthScreen = isHorizontal ? SCREEN_LONG : SCREEN_SHOT;
+    private static int mWidthScreen = SCREEN_SHOT;
     //屏幕高度(不给默认值的话用sh或者sw无法预览出来)
-    private static int mHeightScreen = isHorizontal ? SCREEN_SHOT : SCREEN_LONG;
+    private static int mHeightScreen = SCREEN_LONG;
 
-    public PercentLayoutHelper(ViewGroup host) {
+    public PercentLayoutHelper(ViewGroup host, AttributeSet attrs) {
         mHost = host;
         if (!mHost.isInEditMode()) {//如果不是预览模式就读取真实的屏幕尺寸
             WindowManager wm = (WindowManager) mHost.getContext().getSystemService(Context.WINDOW_SERVICE);
@@ -50,7 +47,28 @@ public class PercentLayoutHelper {
             wm.getDefaultDisplay().getMetrics(outMetrics);
             mWidthScreen = outMetrics.widthPixels;
             mHeightScreen = outMetrics.heightPixels;
+        } else {
+            //预览模式下需要调整父布局的预览的分辨率和横竖屏
+            TypedArray array = mHost.getContext().obtainStyledAttributes(attrs, R.styleable.PercentLayout);
+            boolean isVertical = array.getBoolean(R.styleable.PercentLayout_layout_isPreviewVertical, true);
+            //isVertical = false;
+            //屏幕宽度(不给默认值的话用sh或者sw无法预览出来)
+            mWidthScreen = isVertical ? SCREEN_SHOT : SCREEN_LONG;
+            //屏幕高度(不给默认值的话用sh或者sw无法预览出来)
+            mHeightScreen = isVertical ? SCREEN_LONG : SCREEN_SHOT;
+            array.recycle();
         }
+    }
+
+    /**
+     * 设置预览尺寸，一般不用改，除非有特殊需求
+     *
+     * @param width 宽度
+     * @param height 高度
+     */
+    public static void setPreviewSize(int width, int height) {
+        SCREEN_LONG = height;
+        SCREEN_SHOT = width;
     }
 
     /**

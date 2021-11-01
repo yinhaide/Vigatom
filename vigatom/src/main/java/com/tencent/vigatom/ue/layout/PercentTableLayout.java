@@ -20,7 +20,7 @@ public class PercentTableLayout extends TableLayout {
     public PercentTableLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         //初始化
-        mHelper = new PercentLayoutHelper(this);
+        mHelper = new PercentLayoutHelper(this, attrs);
     }
 
     @Override

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/vigatom_cl_white"
-    tools:ignore="MissingDefaultResource">
+    tools:ignore="MissingDefaultResource"
+    app:layout_isPreviewVertical="false">
 
     <TextView
         android:id="@+id/tv_title"

@@ -47,6 +47,9 @@
         <!-- 下面的属性只给AbsoluteLayout用(这个布局过期了，不建议使用)-->
         <attr name="layout_xPercent" format="string" />
         <attr name="layout_yPercent" format="string" />
+        <!-- 下面的属性是全局的预览属性 -->
+        <!-- 布局的方向是否是竖屏，否则是横屏，默认竖的分辨率是1080*1920，如果设置方向反过来，则分辨率为1920*1080 -->
+        <attr name="layout_isPreviewVertical" format="boolean" />
     </declare-styleable>
     <!-- 圆形百分比属性 -->
     <declare-styleable name="CirclePercent">

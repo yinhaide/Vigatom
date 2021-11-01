@@ -28,8 +28,6 @@ public class WXApplication extends ViApplication {
                     ViLog.e(TAG, msg);
                 })
                 //崩溃处理
-                .enableUncaughtException(true, null, null)
-                //设置百分比布局预览方向
-                .setPreviewDirection(false);
+                .enableUncaughtException(true, null, null);
     }
 }

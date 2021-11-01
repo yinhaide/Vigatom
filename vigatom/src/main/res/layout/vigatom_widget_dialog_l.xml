@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A5000000"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_isPreviewVertical="false">
 
     <com.tencent.vigatom.ue.layout.PercentLinearLayout
         android:id="@+id/content_ll"

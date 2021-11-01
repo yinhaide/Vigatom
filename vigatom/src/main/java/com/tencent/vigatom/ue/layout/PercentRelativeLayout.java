@@ -24,7 +24,7 @@ public class PercentRelativeLayout extends RelativeLayout {
     public PercentRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         //初始化
-        mHelper = new PercentLayoutHelper(this);
+        mHelper = new PercentLayoutHelper(this, attrs);
     }
 
     @Override
