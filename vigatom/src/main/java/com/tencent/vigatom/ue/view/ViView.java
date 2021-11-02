@@ -171,20 +171,9 @@ public abstract class ViView implements IViView {
         return viStatusBarView;
     }
 
-    /**
-     * 结束本次页面，自动回到上次的页面
-     */
-    public void finish() {
-        //先删除栈顶的View
-        ViViewUtil.removeView(rootView, getClass());
-        //然后启动栈顶下面第二个页面
-        ViView targetViView = ViViewUtil.getTopViView(rootView);
-        if (targetViView != null) {
-            startView(targetViView.getClass());
-        } else {
-            //允许最后退到空白页面，需要自己处理最后个页面的回退逻辑
-        }
-    }
+    /* ************************************************************* */
+    /*                     Dialog对话框
+    /* ************************************************************* */
 
     /**
      * 显示Dialog
@@ -237,6 +226,10 @@ public abstract class ViView implements IViView {
         DialogHelper.getInstance().dismiss(rootView);
     }
 
+    /* ************************************************************* */
+    /*                     加载进度框
+    /* ************************************************************* */
+
     /**
      * 显示Loading
      *
@@ -262,12 +255,17 @@ public abstract class ViView implements IViView {
         LoadingHelper.getInstance().dismiss(rootView);
     }
 
+    /* ************************************************************* */
+    /*                     页面路由跳转
+    /* ************************************************************* */
+
     /**
      * 默认页面跳转，会清保留本页面，跳转到目标页面(如果目标页面存在直接拉到最前面显示)
+     *
      * @param target 跳转
      */
-    public void startView(Class target){
-        startView(target,new ViewBean());
+    public void startView(Class target) {
+        startView(target, new ViewBean());
     }
 
     /**
@@ -292,6 +290,21 @@ public abstract class ViView implements IViView {
         }
         //目标目标跳转
         ViViewUtil.showViView(rootView, target, viewBean.getObject());
+    }
+
+    /**
+     * 结束本次页面，自动回到上次的页面
+     */
+    public void finish() {
+        //先删除栈顶的View
+        ViViewUtil.removeView(rootView, getClass());
+        //然后启动栈顶下面第二个页面
+        ViView targetViView = ViViewUtil.getTopViView(rootView);
+        if (targetViView != null) {
+            startView(targetViView.getClass());
+        } else {
+            //允许最后退到空白页面，需要自己处理最后个页面的回退逻辑
+        }
     }
 
     /* ************************************************************* */
@@ -360,6 +373,13 @@ public abstract class ViView implements IViView {
      */
     public void toast(String tip, int imgRes, int duration, boolean isCenter) {
         ToastHelper.getInstance().show(rootView, tip, imgRes, duration, isCenter);
+    }
+
+    /**
+     * 关闭吐司
+     */
+    public void hideToast() {
+        ToastHelper.getInstance().dismiss(rootView);
     }
 
     /* ************************************************************* */

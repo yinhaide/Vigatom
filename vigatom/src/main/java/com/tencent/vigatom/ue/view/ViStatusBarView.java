@@ -102,7 +102,7 @@ public class ViStatusBarView extends ViView {
     }
 
     /**
-     * 还原系统状态栏风格
+     * 自定义状态栏风格
      */
     public void setVigatomStyle() {
         //去掉状态栏
@@ -260,7 +260,7 @@ public class ViStatusBarView extends ViView {
      *
      * @param enable 是否全屏
      */
-    public void setFullScreen(Window window, boolean enable) {
+    private void setFullScreen(Window window, boolean enable) {
         if (enable) {
             //全屏模式
             window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);

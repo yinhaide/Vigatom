@@ -31,6 +31,6 @@ android {
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     //api fileTree(dir: "libs", include: ["*.aar"])
-    api project(":vigatom")
-    //api 'com.github.yinhaide:Vigatom:v0.0.2'
+    //api project(":vigatom")
+    api 'com.github.yinhaide:Vigatom:v0.0.3'
 }

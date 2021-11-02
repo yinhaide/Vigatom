@@ -93,7 +93,7 @@ allprojects {
 ```
 + 2、在应用级别的**build.gradle**添加
 ```
-api 'com.github.yinhaide:Vigatom:v0.0.2'
+api 'com.github.yinhaide:Vigatom:v0.0.3'
 ```
 
 ### 工程配置
@@ -112,7 +112,7 @@ public class WXApplication extends MultiDexApplication {
                 .init(this)
                 //卡顿检测设置
                 .enableFluent(true, 400, (cosTime, fluentBean) -> {
-                    ViLog.e(TAG, fluentBean.toString());
+                    ViLog.e(TAG, "卡顿时间：" + cosTime + " 详情：" + fluentBean.toString());
                 })
                 //内存泄漏检测
                 .enableLeak(true, 5000, (cosTime, hashMap) -> {
@@ -194,6 +194,194 @@ public class ViDialog extends Dialog {
 </com.tencent.vigatom.ue.layout.PercentRelativeLayout>
 ```
 
+### 吐司
+> 自定义吐司，避免了因为不同系统权限限制的原生吐司问题，支持带图片、自定义时间、居中显示不消失等特性
+
+```java
+public abstract class ViView{
+
+    /**
+     * 吐司，默认3秒消失
+     */
+    public void toast(String tip);
+    
+    /**
+     * 字符串加显示时间的吐司
+     */
+    public void toast(String tip, int duration);
+    
+    /**
+     * 带字符串、图片、显示时间的吐司
+     */
+    public void toast(String tip, int imgRes, int duration);
+    
+    /**
+     * 居中显示吐司，Pop风格，为永不消失
+     */
+    public void toastPop(String tip);
+
+    /**
+     * 关闭吐司
+     */
+    public void hideToast();
+}
+```
+
+### 加载进度框
+> 自定义Loading框，支持百分比显示
+
+```java
+public abstract class ViView{
+
+    /**
+     * 显示Loading
+     */
+    public void showLoading(String tips);
+
+    /**
+     * 显示Loading
+     */
+    public void showLoadingPercent(String tips, int percent);
+
+    /**
+     * 隐藏Loading
+     */
+    public void hideLoading();
+}
+```
+
+### 对话框
+> 自定义对话框，支持定制化属性，支持输入编辑框，支持自定义View。
+
+```java
+public abstract class ViView{
+
+    /**
+     * 显示Dialog
+     */
+    public void showDialog(String tips);
+
+    /**
+     * 显示Dialog
+     */
+    public void showDialog(String content, DialogBean dialogBean);
+
+    /**
+     * 显示编辑框Dialog
+     */
+    public void showEditDialog(String hint, CostomCallback<ViEditTextWidget> customCallback);
+
+    /**
+     * 高级自定义级别显示Dialog
+     */
+    public void showCustomDialog(View view, DialogBean dialogBean);
+
+    /**
+     * 隐藏Dialog
+     */
+    public void hideDialog();
+}
+```
+
+### 路由跳转
+> 路由跳转定义了页面的跳转逻辑，支持复杂的栈处理，支持携带数据跳转以及数据接收
+
+```java
+public abstract class ViView{
+
+    /**
+     * 默认页面跳转，会清保留本页面，跳转到目标页面(如果目标页面存在直接拉到最前面显示)
+     */
+    public void startView(Class target);
+
+    /**
+     * 页面跳转,带参数
+     */
+    public void startView(@NonNull Class target, @NonNull ViewBean viewBean);
+
+    /**
+     * 结束本次页面，自动回到上次的页面
+     */
+    public void finish();
+}
+```
+
+### 状态栏
+> 自定义状态栏和系统状态栏的切换，支持沉浸风格，支持自定义子控件,通过ViView的getViStatusBarView方法获取状态栏。
+
+```java
+public class ViStatusBarView{
+
+    /**
+     * 还原系统状态栏风格
+     */
+    public void setSystemStyle();
+
+    /**
+     * 设置自定义状态栏风格
+     */
+    public void setVigatomStyle();
+
+    /**
+     * 设置白色图标和文字风格,应对不同的底色背景
+     */
+    public void setWhiteStyle();
+
+    /**
+     * 设置黑色图标和文字风格,应对不同的底色背景
+     */
+    public void setBlackStyle();
+
+    /**
+     * 设置背景色
+     */
+    public void setBackgroundColor(int color);
+
+    /**
+     * 设置背景色的透明度
+     */
+    public void setBackgroundAlpha(float alpha);
+
+    /**
+     * 设置移动网络信号图标状态
+     */
+    public void setMobileStatus(boolean show, boolean on);
+
+    /**
+     * 设置Wifi信号图标状态
+     *
+     * @param show 是否要显示
+     * @param on 是否在线
+     */
+    public void setWifiStatus(boolean show, boolean on);
+
+    /**
+     * 设置以太网信号图标状态
+     *
+     * @param show 是否要显示
+     * @param on 是否在线
+     */
+    public void setEthernetStatus(boolean show, boolean on);
+
+    /**
+     * 设置外接键盘图标状态
+     */
+    public void setHasKeyboard(boolean hasKeyboard);
+}
+```
+
+
+### 按键
+> 支持了按键的响应，可自定义按键映射关系
+
+```java
+public abstract class ViView{
+
+    @Override
+    public boolean onKey(IViKeyboard iViKeyBoard);
+}
+```
+
 ### 百分比布局
 > 百分比布局屏幕碎片化的终极解决方案，市面上有很多的方案，还有官方Google的终案ConstraintLayout，或多或少存在部分局限性，特别是针对双屏异显的场景，显得能力不足。Vigatom基于Google早期推出的percent-support-lib做了大量的扩展，
 > 支持几乎全部的xxxLayout，支持针对父布局和整个屏幕的百分比(s%、sh%、w%、sw%)，支持实时预览，支持Scrollview+PercentxxxLayout百分比滚动，支持testSize/margin/padding/minWidth/maxWidth/minHeight/maxHeigh/layout_x/layout_y等属性转换成百分比。
@@ -247,6 +435,9 @@ public class ViDialog extends Dialog {
     <!-- 下面的属性只给AbsoluteLayout用(这个布局过期了，不建议使用)-->
     <attr name="layout_xPercent" format="string" />
     <attr name="layout_yPercent" format="string" />
+    <!-- 下面的属性是全局的预览属性 -->
+    <!-- 布局的方向是否是竖屏，否则是横屏，默认竖的分辨率是1080*1920，如果设置方向反过来，则分辨率为1920*1080 -->
+    <attr name="layout_isPreviewVertical" format="boolean" />
 </declare-styleable>
 ```
 
@@ -262,7 +453,8 @@ public class ViDialog extends Dialog {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -278,38 +470,31 @@ public class ViDialog extends Dialog {
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_heightPercent="100%sw"/>
-
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_heightPercent="100%sw"
-                app:layout_marginTopPercent="5%sw"/>
+            <!--子控件，可以任意超过屏幕尺寸-->
 
         </com.tencent.vigatom.ue.layout.PercentLinearLayout>
 
     </ScrollView>
 
-    <View
-        android:id="@+id/v_bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_heightPercent="18%sw"/>
-
 </com.tencent.vigatom.ue.layout.PercentRelativeLayout>
 ```
 
 + 4、横竖屏预览适配
-> 因为在开发阶段无法通过代码区判断是横屏预览还是竖屏，需要开发者手动修改代码，才能精确的看到实时预览效果
+> 提供了layout_isPreviewVertical属性可以设置预览的横竖屏方向，如果是竖屏，显示分辨率为1080*1920，横屏为1920*1080，便于开发编程
 
-```
-Vigatom.getInstance().setPreviewDirection(false);
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_isPreviewVertical="true">
+
+    <!--子控件，基于竖屏尺寸1080*1920显示-->
+
+</com.tencent.vigatom.ue.layout.PercentRelativeLayout>
+
 ```
 
 ## LICENSE
