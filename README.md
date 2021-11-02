@@ -449,7 +449,7 @@ public abstract class ViView{
 > 如果布局高度没有超过屏幕高度的需求，直接使用以上的百分比布局作为父类即可。如果允许超过屏幕高亮滚动的需求(包括存在底部导航栏)，请使用Scrollview+PercentxxxLayout组合。
 
 <div align=center>
-<img src="image/percent.gif" width = "360px"/>
+<img src="image/percent.gif" width = "250px"/>
 </div>
 
 ```xml
