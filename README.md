@@ -457,12 +457,9 @@ public abstract class ViView{
 <com.tencent.vigatom.ue.layout.PercentRelativeLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_above="@+id/v_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
