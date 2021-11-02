@@ -181,7 +181,8 @@ public class ViDialog extends Dialog {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.tencent.vigatom.ue.layout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tencent.vigatom.ue.layout.PercentRelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -480,7 +481,7 @@ public abstract class ViView{
 ```
 
 + 4、横竖屏预览适配
-> 提供了layout_isPreviewVertical属性可以设置预览的横竖屏方向，如果是竖屏，显示分辨率为1080*1920，横屏为1920*1080，便于开发编程
+> 提供了layout_isPreviewVertical属性可以设置预览的横竖屏方向，如果是竖屏，显示分辨率为1080X1920，横屏为1920X1080，便于开发编程
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
